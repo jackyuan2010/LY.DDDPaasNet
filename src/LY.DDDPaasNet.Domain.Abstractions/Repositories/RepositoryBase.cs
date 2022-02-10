@@ -19,7 +19,7 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
 
     public abstract Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate, bool includeDetails = true, CancellationToken cancellationToken = default);
 
-    public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, bool includeDetails = true, CancellationToken cancellationToken = default)
+    public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, bool includeDetails = true, CancellationToken cancellationToken = default)
     {
         var entity = await FindAsync(predicate, includeDetails, cancellationToken);
 
@@ -35,13 +35,25 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
 
     public abstract Task<List<TEntity>> GetListAsync(bool includeDetails = false, CancellationToken cancellationToken = default);
 
+    public abstract Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate, bool includeDetails = false, CancellationToken cancellationToken = default);
+
     public abstract Task<List<TEntity>> GetPagedListAsync(int skipCount, int maxResultCount, string sorting, bool includeDetails = false, CancellationToken cancellationToken = default);
     
     public abstract Task<IQueryable<TEntity>> GetQueryableAsync(CancellationToken cancellationToken = default);
 
+    public virtual Task<IQueryable<TEntity>> WithDetailsAsync(CancellationToken cancellationToken = default)
+    {
+        return GetQueryableAsync(cancellationToken);
+    }
+
+    public virtual Task<IQueryable<TEntity>> WithDetailsAsync(CancellationToken cancellationToken = default, params Expression<Func<TEntity, object>>[] propertySelectors)
+    {
+        return GetQueryableAsync(cancellationToken);
+    }
+
     public abstract Task<TEntity> InsertAsync(TEntity entity, bool autoSave = false, CancellationToken cancellationToken = default);
 
-    public async Task InsertManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
+    public virtual async Task InsertManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -56,7 +68,7 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
 
     public abstract Task<TEntity> UpdateAsync(TEntity entity, bool autoSave = false, CancellationToken cancellationToken = default);
 
-    public async Task UpdateManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
+    public virtual async Task UpdateManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -71,7 +83,7 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
 
     public abstract Task<bool> DeleteAsync(TEntity entity, bool autoSave = false, CancellationToken cancellationToken = default);
 
-    public async Task DeleteManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
+    public virtual async Task DeleteManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
@@ -83,6 +95,8 @@ public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
             await SaveChangesAsync(cancellationToken);
         }
     }
+
+    public abstract Task DeleteAsync(Expression<Func<TEntity, bool>> predicate, bool autoSave = false, CancellationToken cancellationToken = default);
 
     protected virtual Task SaveChangesAsync(CancellationToken cancellationToken)
     {
@@ -127,7 +141,7 @@ public abstract class RepositoryBase<TEntity, TKey> : RepositoryBase<TEntity>, I
         return await DeleteAsync(entity, autoSave, cancellationToken);
     }
 
-    public async Task DeleteManyAsync(IEnumerable<TKey> ids, bool autoSave = false, CancellationToken cancellationToken = default)
+    public virtual async Task DeleteManyAsync(IEnumerable<TKey> ids, bool autoSave = false, CancellationToken cancellationToken = default)
     {
         foreach (var id in ids)
         {

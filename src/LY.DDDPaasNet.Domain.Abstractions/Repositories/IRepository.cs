@@ -20,6 +20,9 @@ public interface IRepository<TEntity> : IRepository, IReadOnlyRepository<TEntity
     Task<bool> DeleteAsync(TEntity entity, bool autoSave = false, CancellationToken cancellationToken = default);
 
     Task DeleteManyAsync(IEnumerable<TEntity> entities, bool autoSave = false, CancellationToken cancellationToken = default);
+
+    Task DeleteAsync(Expression<Func<TEntity, bool>> predicate, bool autoSave = false, CancellationToken cancellationToken = default);
+
 }
 
 public interface IRepository<TEntity, TKey> : IRepository<TEntity>, IReadOnlyRepository<TEntity, TKey>

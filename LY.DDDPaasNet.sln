@@ -8,9 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D2ECA1EF-900
 		src\global.props = src\global.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.Domain.Abstractions", "src\LY.DDDPaasNet.Domain.Abstractions\LY.DDDPaasNet.Domain.Abstractions.csproj", "{EEA8EB46-6712-4F48-9D76-C15617DD364E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.Domain.Abstractions", "src\LY.DDDPaasNet.Domain.Abstractions\LY.DDDPaasNet.Domain.Abstractions.csproj", "{EEA8EB46-6712-4F48-9D76-C15617DD364E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.Core", "src\LY.DDDPaasNet.Core\LY.DDDPaasNet.Core.csproj", "{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.Core", "src\LY.DDDPaasNet.Core\LY.DDDPaasNet.Core.csproj", "{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.EntityFrameworkCore", "src\LY.DDDPaasNet.EntityFrameworkCore\LY.DDDPaasNet.EntityFrameworkCore.csproj", "{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +39,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EEA8EB46-6712-4F48-9D76-C15617DD364E} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 		{EF5160B8-4C1F-4B0E-8703-F87F656BB75F} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
+		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7785FB3D-7A80-45A7-838F-CB7D43F90262}

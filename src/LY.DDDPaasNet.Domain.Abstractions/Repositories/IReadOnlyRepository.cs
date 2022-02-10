@@ -7,26 +7,32 @@ public interface IReadOnlyRepository<TEntity> : IRepository
 {
     Task<List<TEntity>> GetListAsync(bool includeDetails = false, CancellationToken cancellationToken = default);
 
+    Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> predicate,
+        bool includeDetails = false,
+        CancellationToken cancellationToken = default);
+
+
     Task<long> GetCountAsync(CancellationToken cancellationToken = default);
 
-    Task<List<TEntity>> GetPagedListAsync(
-        int skipCount,
+    Task<List<TEntity>> GetPagedListAsync(int skipCount,
         int maxResultCount,
         string sorting,
         bool includeDetails = false,
         CancellationToken cancellationToken = default);
 
-    Task<TEntity> FindAsync(
-        Expression<Func<TEntity, bool>> predicate,
+    Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate,
         bool includeDetails = true,
         CancellationToken cancellationToken = default);
 
-    Task<TEntity> GetAsync(
-        Expression<Func<TEntity, bool>> predicate,
+    Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate,
         bool includeDetails = true,
         CancellationToken cancellationToken = default);
 
     Task<IQueryable<TEntity>> GetQueryableAsync(CancellationToken cancellationToken = default);
+
+    Task<IQueryable<TEntity>> WithDetailsAsync(CancellationToken cancellationToken = default);
+
+    Task<IQueryable<TEntity>> WithDetailsAsync(CancellationToken cancellationToken = default, params Expression<Func<TEntity, object>>[] propertySelectors);
 }
 
 public interface IReadOnlyRepository<TEntity, TKey> : IReadOnlyRepository<TEntity>
