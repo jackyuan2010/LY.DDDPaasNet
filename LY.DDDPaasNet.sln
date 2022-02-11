@@ -12,7 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.Domain.Abstra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.Core", "src\LY.DDDPaasNet.Core\LY.DDDPaasNet.Core.csproj", "{EF5160B8-4C1F-4B0E-8703-F87F656BB75F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.EntityFrameworkCore", "src\LY.DDDPaasNet.EntityFrameworkCore\LY.DDDPaasNet.EntityFrameworkCore.csproj", "{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.EntityFrameworkCore", "src\LY.DDDPaasNet.EntityFrameworkCore\LY.DDDPaasNet.EntityFrameworkCore.csproj", "{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.Metadata.Domain", "src\LY.DDDPaasNet.Metadata.Domain\LY.DDDPaasNet.Metadata.Domain.csproj", "{BE782628-4FB2-4601-999B-89D4B1973A8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.Metadata.Infrastructure.Core", "src\LY.DDDPaasNet.Metadata.Infrastructure.Core\LY.DDDPaasNet.Metadata.Infrastructure.Core.csproj", "{B6661F76-81A5-46FD-8017-8F3B34CD4CAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,14 @@ Global
 		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE782628-4FB2-4601-999B-89D4B1973A8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE782628-4FB2-4601-999B-89D4B1973A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE782628-4FB2-4601-999B-89D4B1973A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE782628-4FB2-4601-999B-89D4B1973A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6661F76-81A5-46FD-8017-8F3B34CD4CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6661F76-81A5-46FD-8017-8F3B34CD4CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6661F76-81A5-46FD-8017-8F3B34CD4CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6661F76-81A5-46FD-8017-8F3B34CD4CAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +52,8 @@ Global
 		{EEA8EB46-6712-4F48-9D76-C15617DD364E} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 		{EF5160B8-4C1F-4B0E-8703-F87F656BB75F} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 		{A63CBDFF-2E27-4748-B36F-D10AE4AEBF1F} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
+		{BE782628-4FB2-4601-999B-89D4B1973A8E} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
+		{B6661F76-81A5-46FD-8017-8F3B34CD4CAD} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7785FB3D-7A80-45A7-838F-CB7D43F90262}

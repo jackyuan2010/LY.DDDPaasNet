@@ -9,7 +9,7 @@ namespace LY.DDDPaasNet.EntityFrameworkCore;
 public abstract class EFCoreDbContext<TDbContext> : DbContext, Domain.Abstractions.Uow.IDatabase, ITransaction
     where TDbContext : DbContext
 {
-    private IDbContextTransaction dbContextTransaction;
+    private IDbContextTransaction? dbContextTransaction;
 
     public bool HasActiveTransactin => dbContextTransaction != null;
 
@@ -36,7 +36,7 @@ public abstract class EFCoreDbContext<TDbContext> : DbContext, Domain.Abstractio
 
     public virtual async Task CommitTransactionAsync(CancellationToken cancellationToken = default)
     {
-        if (!HasActiveTransactin)
+        if (dbContextTransaction == null)
             return;
 
         try
@@ -49,17 +49,17 @@ public abstract class EFCoreDbContext<TDbContext> : DbContext, Domain.Abstractio
         }
         finally
         {
-            if (this.dbContextTransaction != null)
+            if (dbContextTransaction != null)
             {
-                this.dbContextTransaction.Dispose();
-                this.dbContextTransaction = null;
+                dbContextTransaction.Dispose();
+                dbContextTransaction = null;
             }
         }
     }
 
     public virtual async Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
     {
-        if (!HasActiveTransactin)
+        if (dbContextTransaction == null)
             return;
 
         try
@@ -68,6 +68,11 @@ public abstract class EFCoreDbContext<TDbContext> : DbContext, Domain.Abstractio
         }
         finally
         {
+            if (dbContextTransaction != null)
+            {
+                dbContextTransaction.Dispose();
+                dbContextTransaction = null;
+            }
         }
     }
 }
