@@ -5,7 +5,8 @@ using LY.DDDPaasNet.Metadata.Infrastructure.Core.EntityFrameworkCore;
 
 namespace LY.DDDPaasNet.Metadata.Infrastructure.Core.Repositories;
 
-public class MetadataRepository<TDbContext, TEntity> : EFCoreRepository<MetadataDbContext, IMetadataAggregateRoot> , IMetadataRepository
+public class MetadataRepository<TDbContext, TEntity> : EFCoreRepository<MetadataDbContext, TEntity> , IMetadataRepository<TEntity>
+    where TEntity : class, IMetadataAggregateRoot
 {
     public MetadataRepository(MetadataDbContext dbContext, ILazyServiceProvider lazyServiceProvider)
         : base(dbContext, lazyServiceProvider)
@@ -13,7 +14,8 @@ public class MetadataRepository<TDbContext, TEntity> : EFCoreRepository<Metadata
     }
 }
 
-public class MetadataRepository<TDbContext, TEntity, TKey> : EFCoreRepository<MetadataDbContext, IMetadataAggregateRoot<TKey>>
+public class MetadataRepository<TDbContext, TEntity, TKey> : EFCoreRepository<MetadataDbContext, TEntity, TKey>, IMetadataRepository<TEntity, TKey>
+    where TEntity : class, IMetadataAggregateRoot<TKey>
 {
     public MetadataRepository(MetadataDbContext dbContext, ILazyServiceProvider lazyServiceProvider)
         : base(dbContext, lazyServiceProvider)

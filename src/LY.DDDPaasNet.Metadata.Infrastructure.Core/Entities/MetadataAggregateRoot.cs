@@ -9,7 +9,7 @@ public abstract class MetadataAggregateRoot : Entity, IMetadataAggregateRoot
     #region DomainEvent
     private readonly ICollection<IDomainEvent> domainEvents = new Collection<IDomainEvent>();
 
-    public IReadOnlyCollection<IDomainEvent> DomainEvents => domainEvents?.ToImmutableList();
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => domainEvents.ToImmutableList();
 
     protected virtual void AddDomainEvent(IDomainEvent eventItem)
     {
@@ -33,7 +33,7 @@ public abstract class MetadataAggregateRoot<TKey> : Entity<TKey>, IMetadataAggre
     #region DomainEvent
     private readonly ICollection<IDomainEvent> domainEvents = new Collection<IDomainEvent>();
 
-    public IReadOnlyCollection<IDomainEvent> DomainEvents => domainEvents?.ToImmutableList();
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => domainEvents.ToImmutableList();
 
     protected virtual void AddDomainEvent(IDomainEvent eventItem)
     {

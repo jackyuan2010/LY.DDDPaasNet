@@ -38,6 +38,10 @@ public abstract class EFCoreRepository<TDbContext, TEntity> : RepositoryBase<TEn
 
             if (database == null)
             {
+                if (UnitOfWorkManager.Current.Options.Timeout.HasValue && !DbContext.Database.GetCommandTimeout().HasValue)
+                {
+                    DbContext.Database.SetCommandTimeout(TimeSpan.FromMilliseconds(UnitOfWorkManager.Current.Options.Timeout.Value));
+                }
                 unitOfWork.AddDatabase(databaseKey, DbContext);
             }
 
