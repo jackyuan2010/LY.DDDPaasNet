@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\src\global.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.DDDPaasNet.Core\LY.DDDPaasNet.Core.csproj" />
+    <ProjectReference Include="..\LY.DDDPaasNet.EventBus\LY.DDDPaasNet.EventBus.csproj" />
+    <ProjectReference Include="..\LY.DDDPaasNet.Kafka\LY.DDDPaasNet.Kafka.csproj" />
+  </ItemGroup>
+
+</Project>

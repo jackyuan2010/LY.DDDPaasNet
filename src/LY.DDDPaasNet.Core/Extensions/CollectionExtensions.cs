@@ -12,16 +12,15 @@ public static class CollectionExtensions
         return source != null && source.Any();
     }
 
-    public static bool IsNullOrEmpty<T>(this IReadOnlyCollection<T> source)
-    {
-        return source == null || !source.Any();
-    }
+    //public static bool IsNullOrEmpty<T>(this IReadOnlyCollection<T> source)
+    //{
+    //    return source == null || !source.Any();
+    //}
 
-    public static bool IsNotNullOrEmpty<T>(this IReadOnlyCollection<T> source)
-    {
-        return source != null && source.Any();
-    }
-
+    //public static bool IsNotNullOrEmpty<T>(this IReadOnlyCollection<T> source)
+    //{
+    //    return source != null && source.Any();
+    //}
 
     public static bool AddIfNotContains<T>(this ICollection<T> source, T item)
     {

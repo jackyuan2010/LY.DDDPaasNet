@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\src\global.props" />
+
+	<PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\LY.DDDPaasNet.Domain.Abstractions\LY.DDDPaasNet.Domain.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

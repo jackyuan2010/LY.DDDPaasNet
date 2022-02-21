@@ -270,7 +270,7 @@ public abstract class EFCoreRepository<TDbContext, TEntity> : RepositoryBase<TEn
     private static IQueryable<TEntity> IncludeDetails(IQueryable<TEntity> query,
         Expression<Func<TEntity, object>>[] propertySelectors)
     {
-        if (!propertySelectors.IsNullOrEmpty())
+        if (propertySelectors.IsNullOrEmpty())
         {
             foreach (var propertySelector in propertySelectors)
             {

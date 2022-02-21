@@ -9,7 +9,7 @@ public static class MediatorExtensions
 {
     public static async Task DispatchDomainEventAsync(this IMediator mediator, DbContext dbContext)
     {
-        var domainEntities = dbContext.ChangeTracker.Entries<MetadataAggregateRoot>().Where(x => x.Entity.DomainEvents.IsNotNullOrEmpty());
+        var domainEntities = dbContext.ChangeTracker.Entries<MetadataAggregateRoot>().Where(x => x.Entity.DomainEvents.Any());
         var domaminEvents = domainEntities.SelectMany(x => x.Entity.DomainEvents).ToImmutableList();
         domainEntities.ToImmutableList().ForEach(x => x.Entity.ClearDomainEvent());
         foreach (var domainEvent in domaminEvents)
