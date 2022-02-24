@@ -95,9 +95,7 @@ public class KafkaMessageConsumer : IKafkaMessageConsumer, IDisposable
             {
                 try
                 {
-                    cancellationToken.ThrowIfCancellationRequested();
-
-                    var consumeResult = Consumer.Consume();
+                    var consumeResult = Consumer.Consume(cancellationToken);
 
                     if (consumeResult.IsPartitionEOF)
                     {

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\src\global.props" />	
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>	
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
+  </ItemGroup>	
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.DDDPaasNet.EntityFrameworkCore\LY.DDDPaasNet.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

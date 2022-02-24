@@ -24,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.EventBus", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.EventBus.Kafka", "src\LY.DDDPaasNet.EventBus.Kafka\LY.DDDPaasNet.EventBus.Kafka.csproj", "{A88740D2-4CD7-48C8-93DE-664D76525677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.Kafka", "src\LY.DDDPaasNet.Kafka\LY.DDDPaasNet.Kafka.csproj", "{58DDEFB4-641E-4776-BC6E-1A5905FA3A29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LY.DDDPaasNet.Kafka", "src\LY.DDDPaasNet.Kafka\LY.DDDPaasNet.Kafka.csproj", "{58DDEFB4-641E-4776-BC6E-1A5905FA3A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LY.DDDPaasNet.EntityFrameworkCore.PostgreSql", "src\LY.DDDPaasNet.EntityFrameworkCore.PostgreSql\LY.DDDPaasNet.EntityFrameworkCore.PostgreSql.csproj", "{1AA10029-1420-4A7B-991A-E06448F89104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{58DDEFB4-641E-4776-BC6E-1A5905FA3A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58DDEFB4-641E-4776-BC6E-1A5905FA3A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58DDEFB4-641E-4776-BC6E-1A5905FA3A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA10029-1420-4A7B-991A-E06448F89104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA10029-1420-4A7B-991A-E06448F89104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA10029-1420-4A7B-991A-E06448F89104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA10029-1420-4A7B-991A-E06448F89104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{E43FAD62-FA54-4FB7-9E6E-1A1B55ECDCB2} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 		{A88740D2-4CD7-48C8-93DE-664D76525677} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 		{58DDEFB4-641E-4776-BC6E-1A5905FA3A29} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
+		{1AA10029-1420-4A7B-991A-E06448F89104} = {D2ECA1EF-9003-4D13-9D21-0371027CEA63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7785FB3D-7A80-45A7-838F-CB7D43F90262}

@@ -49,6 +49,7 @@ public class KafkaEventBus : EventBusBase
             return;
         }
 
+        var eventData = DefaultObjectSerializer.Deserialize(eventType, message.Value);
         var eventHandlers = GetOrCreateEventHandlers(eventType);
         foreach(IEventHandler handler in eventHandlers)
         {
